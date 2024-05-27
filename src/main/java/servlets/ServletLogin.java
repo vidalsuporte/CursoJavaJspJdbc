@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 
+import dao.DAOLoginRepository;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -22,6 +23,10 @@ public class ServletLogin extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
+	DAOLoginRepository daoLogin = new DAOLoginRepository();
+	
+	
     public ServletLogin() {
        
     }
@@ -50,24 +55,29 @@ public class ServletLogin extends HttpServlet {
 		
 		
 		
-		if(modelLogin.getLogin().equalsIgnoreCase("admin") && modelLogin.getSenha().equalsIgnoreCase("admin")) {
+		try {
+			if(daoLogin.validarAutenticação(modelLogin)) {
+				
+			request.getSession().setAttribute("usuario", modelLogin.getLogin());	
 			
-		request.getSession().setAttribute("usuario", modelLogin.getLogin());	
-		
-		if(url == null || url.equals("null")) {
-			url = "principal/principal.jsp";
-		}
-		
-		RequestDispatcher redirecionar = request.getRequestDispatcher(url);
-		request.setAttribute("msg", "Login realizado com sucesso")	;
-		redirecionar.forward(request, response);
-		System.out.println(modelLogin);
-		
-		}else {
+			if(url == null || url.equals("null")) {
+				url = "principal/principal.jsp";
+			}
 			
-			RequestDispatcher redirecionar = request.getRequestDispatcher("/index.jsp");
-			request.setAttribute("msg", "Informe o login e senha novamente!")	;
+			RequestDispatcher redirecionar = request.getRequestDispatcher(url);
+			request.setAttribute("msg", "Login realizado com sucesso")	;
 			redirecionar.forward(request, response);
+			System.out.println(modelLogin);
+			
+			}else {
+				
+				RequestDispatcher redirecionar = request.getRequestDispatcher("/index.jsp");
+				request.setAttribute("msg", "Informe o login e senha novamente!")	;
+				redirecionar.forward(request, response);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		}else {
