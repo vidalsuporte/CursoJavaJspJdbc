@@ -7,15 +7,7 @@ xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/
   <packaging>war</packaging>
   <name>curso-jsp</name>
   <description>curso java modulo jsp</description>
- <depencendies>
-	<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
-<dependency>
-    <groupId>org.postgresql</groupId>
-    <artifactId>postgresql</artifactId>
-    <version>9.4.1212</version>
-</dependency>
- </depencendies>
-  
+ 
   <build>
     <plugins>
       <plugin>
@@ -31,4 +23,15 @@ xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+  <dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>9.4-1200-jdbc41</version>
+</dependency>
+</dependencies>
+
+  
+  
+  
 </project>

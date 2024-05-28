@@ -5,41 +5,46 @@ import java.sql.DriverManager;
 
 public class SingleConnection {
 
-	private static String senha = "123456";
-	private static String usuario = "postgres";
-	private static String banco = "jdbc:postgrsql://localhost:5432/curso-jsp?auroReconnect=true";
+	private static String url = "jdbc:postgresql://localhost:5432/curso-jsp";
+	private static String password = "123456";
+	private static String user = "postgres";
 	private static Connection connection = null;
-
-	
-public static Connection getConnection() {
-return connection;	
-}
 	
 	
 	static {
+		
 		conectar();
 	}
-
-	public SingleConnection() {
-		conectar();// TODO Auto-generated constructor stub
-	}
-
-	private static void conectar() {
-
+	
+	
+	public static void conectar() {
+		
 		try {
-
-			if (connection == null) {
+			if(connection == null) {
 				Class.forName("org.postgresql.Driver");
-				connection = DriverManager.getConnection(banco, usuario, senha);
+				connection = DriverManager.getConnection(url,user,password);
 				connection.setAutoCommit(false);
-
+				System.out.println("Conectou com sucesso.");
+				
 			}
-
-		} catch (Exception e) {
-
+			
+			
+			
+			
+		}catch(Exception e) {
 			e.printStackTrace();
 		}
-
+		
+		
+		
+		
+		
 	}
-
+	
+	
+	public static Connection getConnection() {
+		
+			return connection;
+	}
+			
 }

@@ -67,12 +67,15 @@ public class FilterAutenticacao extends HttpFilter implements Filter {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-
+			RequestDispatcher redirecionar = request.getRequestDispatcher("/erro.jsp");
+			request.setAttribute("msgErro",e.getMessage())	;
+			redirecionar.forward(request, response);
 			try {
 				connection.rollback();
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
+				
 			}
 		}
 	}
@@ -80,6 +83,7 @@ public class FilterAutenticacao extends HttpFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
 
 		connection = SingleConnection.getConnection();
+		
 
 	}
 
