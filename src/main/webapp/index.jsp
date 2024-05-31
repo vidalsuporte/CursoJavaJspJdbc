@@ -1,89 +1,213 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang= "en">
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Curso Java Server Page</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-	crossorigin="anonymous">
-	
-	
-	<style type="text/css">
-	form{
-	position: absolute;
-	left: 33%;
-	right: 33%;
-	top: 40%;
-	}
-	
-	h1 {
-	position: absolute;
-	left: 33%;
-	
-	top: 20%;
-}
-	h3 {
-	position: absolute;
-	left: 33%%;
-	right: 33%;
-	top: 30%;
-}
-	h5 {
-	position: absolute;
-	left: 33%%;
-	right: 33%;
-	top: 60%;
-}
-	</style>
-	
-	
-	
-	
+<title>Curso java Jsp JDBC Bootstrap</title>
+<!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 10]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+<!-- Meta -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description"
+	content="Mega Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+<meta name="keywords"
+	content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+<meta name="author" content="codedthemes" />
+<!-- Favicon icon -->
+
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+<!-- Google font-->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500"
+	rel="stylesheet">
+<!-- Required Fremwork -->
+<link rel="stylesheet" type="text/css"
+	href="assets/css/bootstrap/css/bootstrap.min.css">
+<!-- waves.css -->
+<link rel="stylesheet" href="assets/pages/waves/css/waves.min.css"
+	type="text/css" media="all">
+<!-- themify-icons line icon -->
+<link rel="stylesheet" type="text/css"
+	href="assets/icon/themify-icons/themify-icons.css">
+<!-- ico font -->
+<link rel="stylesheet" type="text/css"
+	href="assets/icon/icofont/css/icofont.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" type="text/css"
+	href="assets/icon/font-awesome/css/font-awesome.min.css">
+<!-- Style.css -->
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
-<body>
-	<h1>Projeto Java JSP</h1>
 
-	<%
-	out.print("<h3> Login do Projeto</h3>");
-	%>
+<body themebg-pattern="theme1">
+	<!-- Pre-loader start -->
+	<div class="theme-loader">
+		<div class="loader-track">
+			<div class="preloader-wrapper">
+				<div class="spinner-layer spinner-blue">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="gap-patch">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
+				<div class="spinner-layer spinner-red">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="gap-patch">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
 
+				<div class="spinner-layer spinner-yellow">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="gap-patch">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
 
-	<form  action="ServletLogin" method="post" class="row g-3 needs-validation" novalidate>
-		<input type="hidden" value=<%=request.getParameter("url")%> name="url">
-		<div class="col-md-6">
-		<label>Login</label>
-			<input name= "login" type="text" class="form-control" id="formGroupExampleInput2"  required="required">
-			<div class="invalid-feedback">
-      Insira o Login!
-    </div>
+				<div class="spinner-layer spinner-green">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="gap-patch">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-6">
-		<label>Senha</label>
-			<input name= "password" type="password" class="form-control" id="formGroupExampleInput2"  required="required">
-		<div class="invalid-feedback">
-      Insira a Senha!
-    </div>
-		</div>
-		
+	</div>
+	<!-- Pre-loader end -->
 
-		<div class="col-12">
-			<button type="submit" class="btn btn-primary">Login</button>
+	<section class="login-block">
+		<!-- Container-fluid starts -->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<!-- Authentication card start -->
+
+					<form action="ServletLogin" method="post"
+						class="md-float-material form-material needs-validation"
+						novalidate >
+						<input type="hidden" value=<%=request.getParameter("url")%>
+							name="url">
+						<div class="text-center">
+							<img src="assets/images/logo.png" alt="logo.png">
+						</div>
+						<div class="auth-box card">
+							<div class="card-block">
+								<div class="row m-b-20">
+									<div class="col-md-12">
+										<h3 class="text-center">Login</h3>
+									</div>
+								</div>
+								<div class="form-group form-primary">
+									<label>Login</label> <input type="text" name="login"
+										class="form-control" required="required"> <span
+										class="form-bar"></span>
+
+									<div class="invalid-feedback">Insira o Login!</div>
+								</div>
+								<div class="form-group form-primary">
+									<label>Senha</label> <input type="password" name="password"
+										class="form-control" required="required"> <span
+										class="form-bar"></span>
+
+									<div class="invalid-feedback">Insira a Senha!</div>
+								</div>
+								<!--  <div class="row m-t-25 text-left">
+                                        <div class="col-12">
+                                            <div class="checkbox-fade fade-in-primary d-">
+                                                <label>
+                                                    <input type="checkbox" value="">
+                                                    <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                    <span class="text-inverse">Remember me</span>
+                                                </label>
+                                            </div>
+                                            <div class="forgot-phone text-right f-right">
+                                                <a href="#" class="text-right f-w-600"> Forgot Password?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     -->
+								<div class="row m-t-30">
+									<div class="col-md-12">
+										<button type="submit"
+											class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Login</button>
+									</div>
+								</div>
+								<hr />
+								   <div class="row">
+								<h5>${msg}</h5>
+                                       <!--  <div class="col-md-10">
+                                            <p class="text-inverse text-left m-b-0">Thank you.</p>
+                                            <p class="text-inverse text-left"><a href="index.html"><b>Back to website</b></a></p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <img src="assets/images/auth/Logo-small-bottom.png" alt="small-logo.png">
+                                        </div>  -->
+                                    </div>
+							</div>
+						</div>
+					</form>
+					<!-- end of form -->
+				</div>
+				<!-- end of col-sm-12 -->
+			</div>
+			<!-- end of row -->
 		</div>
-	</form>
-	
- 	<h5>${msg}</h5>
-	
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-		crossorigin="anonymous">
-	</script>
-	<script type="text/javascript"	>// Example starter JavaScript for disabling form submissions if there are invalid fields
+		<!-- end of container-fluid -->
+	</section>
+
+	<!-- Required Jquery -->
+	<script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="assets/js/jquery-ui/jquery-ui.min.js "></script>
+	<script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
+	<script type="text/javascript"
+		src="assets/js/bootstrap/js/bootstrap.min.js "></script>
+	<!-- waves js -->
+	<script src="assets/pages/waves/js/waves.min.js"></script>
+	<!-- jquery slimscroll js -->
+	<script type="text/javascript"
+		src="assets/js/jquery-slimscroll/jquery.slimscroll.js "></script>
+	<!-- modernizr js -->
+	<script type="text/javascript" src="assets/js/SmoothScroll.js"></script>
+	<script src="assets/js/jquery.mCustomScrollbar.concat.min.js "></script>
+	<!-- i18next.min.js -->
+	<script type="text/javascript"
+		src="bower_components/i18next/js/i18next.min.js"></script>
+	<script type="text/javascript"
+		src="bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
+	<script type="text/javascript"
+		src="bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
+	<script type="text/javascript"
+		src="bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
+	<script type="text/javascript" src="assets/js/common-pages.js"></script>
+	<script type="text/javascript">// Example starter JavaScript for disabling form submissions if there are invalid fields
 	(function() {
 	  'use strict'
 
@@ -104,7 +228,6 @@
 	})()
 	
 	</script>
-
-	
 </body>
+
 </html>

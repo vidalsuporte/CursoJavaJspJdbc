@@ -36,7 +36,16 @@ public class ServletLogin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-     doPost(request, response);
+		String acao = request.getParameter("acao");
+
+		if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("logout")) {
+			request.getSession().invalidate();
+			RequestDispatcher redirecionar = request.getRequestDispatcher(request.getContextPath() + "/index.jsp");
+			redirecionar.forward(request, response);
+		} else {
+
+			doPost(request, response);
+		}
 	}
 
 	/**
@@ -49,6 +58,7 @@ public class ServletLogin extends HttpServlet {
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
 		String url = request.getParameter("url");
+		
 
 		if (login != null && !login.isEmpty() && password != null && !password.isEmpty()) {
 
@@ -69,10 +79,12 @@ public class ServletLogin extends HttpServlet {
 					System.out.println(modelLogin);
 
 				} else {
-
+					
+					
 					RequestDispatcher redirecionar = request.getRequestDispatcher("/index.jsp");
 					request.setAttribute("msg", "Informe o login e senha novamente!");
 					redirecionar.forward(request, response);
+					
 				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
