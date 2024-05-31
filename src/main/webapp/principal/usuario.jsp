@@ -66,28 +66,16 @@
 																		required=""> <span class="form-bar"></span> <label
 																		class="float-label">Email</label>
 																</div>
-														
+
 															<button
-																class="btn btn-primary btn-round waves-effect waves-light">Primary
-																Button</button>
+																class="btn btn-primary btn-round waves-effect waves-light">Salvar</button>
 															<button
-																class="btn btn-success btn-round waves-effect waves-light">Success
-																Button</button>
+																class="btn btn-success btn-round waves-effect waves-light">Alterar</button>
 															<button
-																class="btn btn-info btn-round waves-effect waves-light">Info
-																Button</button>
+																class="btn btn-info btn-round waves-effect waves-light">Exclurir</button>
 															<button
-																class="btn btn-warning btn-round waves-effect waves-light">Warning
-																Button</button>
-															<button
-																class="btn btn-danger btn-round waves-effect waves-light">Danger
-																Button</button>
-															<button
-																class="btn btn-inverse btn-round waves-effect waves-light">Inverse
-																Button</button>
-															<button
-																class="btn btn-disabled btn-round disabled waves-effect waves-light">Disabled
-																Button</button>
+																class="btn btn-warning btn-round waves-effect waves-light">Consultar</button>
+															
 														</form>
 
 													</div>
