@@ -23,27 +23,31 @@
 <meta name="author" content="codedthemes" />
 <!-- Favicon icon -->
 
-<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+<link rel="icon"
+	href="<%=request.getContextPath()%>/assets/images/favicon.ico"
+	type="image/x-icon">
 <!-- Google font-->
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,500"
 	rel="stylesheet">
 <!-- Required Fremwork -->
 <link rel="stylesheet" type="text/css"
-	href="assets/css/bootstrap/css/bootstrap.min.css">
+	href="<%=request.getContextPath()%>/assets/css/bootstrap/css/bootstrap.min.css">
 <!-- waves.css -->
-<link rel="stylesheet" href="assets/pages/waves/css/waves.min.css"
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/pages/waves/css/waves.min.css"
 	type="text/css" media="all">
 <!-- themify-icons line icon -->
 <link rel="stylesheet" type="text/css"
-	href="assets/icon/themify-icons/themify-icons.css">
+	href="<%=request.getContextPath()%>/assets/icon/themify-icons/themify-icons.css">
 <!-- ico font -->
 <link rel="stylesheet" type="text/css"
-	href="assets/icon/icofont/css/icofont.css">
+	href="<%=request.getContextPath()%>/assets/icon/icofont/css/icofont.css">
 <!-- Font Awesome -->
 <link rel="stylesheet" type="text/css"
-	href="assets/icon/font-awesome/css/font-awesome.min.css">
+	href="<%=request.getContextPath()%>/assets/icon/font-awesome/css/font-awesome.min.css">
 <!-- Style.css -->
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/assets/css/style.css">
 </head>
 
 <body themebg-pattern="theme1">
@@ -109,13 +113,14 @@
 				<div class="col-sm-12">
 					<!-- Authentication card start -->
 
-					<form action="ServletLogin" method="post"
-						class="md-float-material form-material needs-validation"
-						novalidate >
+					<form action="<%=request.getContextPath()%>/ServletLogin"
+						method="post"
+						class="md-float-material form-material">
 						<input type="hidden" value=<%=request.getParameter("url")%>
 							name="url">
 						<div class="text-center">
-							<img src="assets/images/logo.png" alt="logo.png">
+							<img src="<%=request.getContextPath()%>/assets/images/logo.png"
+								alt="logo.png">
 						</div>
 						<div class="auth-box card">
 							<div class="card-block">
@@ -125,20 +130,21 @@
 									</div>
 								</div>
 								<div class="form-group form-primary">
-									<label>Login</label> <input type="text" name="login"
-										class="form-control" required="required"> <span
-										class="form-bar"></span>
+									<div class="form-group form-default form-static-label">
+										<input type="text" name="login" id= "login" class="form-control"
+											required=""> <span class="form-bar"></span> <label
+											class="float-label">Login</label>
 
-									<div class="invalid-feedback">Insira o Login!</div>
-								</div>
-								<div class="form-group form-primary">
-									<label>Senha</label> <input type="password" name="password"
-										class="form-control" required="required"> <span
-										class="form-bar"></span>
+									</div>
+									<div class="form-group form-primary">
+										<div class="form-group form-default form-static-label">
+											<input type="password" name="password" id="password" class="form-control"
+												required=""> <span class="form-bar"></span>
+											<label class="float-label">Senha</label>
 
-									<div class="invalid-feedback">Insira a Senha!</div>
-								</div>
-								<!--  <div class="row m-t-25 text-left">
+										</div>
+									</div>
+									<!--  <div class="row m-t-25 text-left">
                                         <div class="col-12">
                                             <div class="checkbox-fade fade-in-primary d-">
                                                 <label>
@@ -153,23 +159,24 @@
                                         </div>
                                     </div>
                                      -->
-								<div class="row m-t-30">
-									<div class="col-md-12">
-										<button type="submit"
-											class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Login</button>
+									<div class="row m-t-30">
+										<div class="col-md-12">
+											<button type="submit"
+												class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Login</button>
+										</div>
 									</div>
-								</div>
-								<hr />
-								   <div class="row">
-								<h5>${msg}</h5>
-                                       <!--  <div class="col-md-10">
+									<hr />
+									<div class="row">
+										<h5>${msg}</h5>
+										<!--  <div class="col-md-10">
                                             <p class="text-inverse text-left m-b-0">Thank you.</p>
                                             <p class="text-inverse text-left"><a href="index.html"><b>Back to website</b></a></p>
                                         </div>
                                         <div class="col-md-2">
-                                            <img src="assets/images/auth/Logo-small-bottom.png" alt="small-logo.png">
+                                            <img src="<%=request.getContextPath()%>/assets/images/auth/Logo-small-bottom.png" alt="small-logo.png">
                                         </div>  -->
-                                    </div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</form>
@@ -183,51 +190,11 @@
 	</section>
 
 	<!-- Required Jquery -->
-	<script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
-	<script type="text/javascript"
-		src="assets/js/jquery-ui/jquery-ui.min.js "></script>
-	<script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
-	<script type="text/javascript"
-		src="assets/js/bootstrap/js/bootstrap.min.js "></script>
-	<!-- waves js -->
-	<script src="assets/pages/waves/js/waves.min.js"></script>
-	<!-- jquery slimscroll js -->
-	<script type="text/javascript"
-		src="assets/js/jquery-slimscroll/jquery.slimscroll.js "></script>
-	<!-- modernizr js -->
-	<script type="text/javascript" src="assets/js/SmoothScroll.js"></script>
-	<script src="assets/js/jquery.mCustomScrollbar.concat.min.js "></script>
-	<!-- i18next.min.js -->
-	<script type="text/javascript"
-		src="bower_components/i18next/js/i18next.min.js"></script>
-	<script type="text/javascript"
-		src="bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
-	<script type="text/javascript"
-		src="bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
-	<script type="text/javascript"
-		src="bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
-	<script type="text/javascript" src="assets/js/common-pages.js"></script>
-	<script type="text/javascript">// Example starter JavaScript for disabling form submissions if there are invalid fields
-	(function() {
-	  'use strict'
-
-	  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-	  const forms = document.querySelectorAll('.needs-validation')
-
-	  // Loop over them and prevent submission
-	  Array.from(forms).forEach(form => {
-	    form.addEventListener('submit', event => {
-	      if (!form.checkValidity()) {
-	        event.preventDefault()
-	        event.stopPropagation()
-	      }
-
-	      form.classList.add('was-validated')
-	    }, false)
-	  })
-	})()
 	
-	</script>
+
+	
+	<jsp:include page="principal/javascriptfile.jsp"></jsp:include>
+
 </body>
 
 </html>

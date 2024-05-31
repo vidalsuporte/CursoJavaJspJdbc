@@ -40,7 +40,7 @@ public class ServletLogin extends HttpServlet {
 
 		if (acao != null && !acao.isEmpty() && acao.equalsIgnoreCase("logout")) {
 			request.getSession().invalidate();
-			RequestDispatcher redirecionar = request.getRequestDispatcher(request.getContextPath() + "/index.jsp");
+			RequestDispatcher redirecionar = request.getRequestDispatcher("/index.jsp");
 			redirecionar.forward(request, response);
 		} else {
 
@@ -70,7 +70,7 @@ public class ServletLogin extends HttpServlet {
 					request.getSession().setAttribute("usuario", modelLogin.getLogin());
 
 					if (url == null || url.equals("null")) {
-						url = "principal/principal.jsp";
+						url = "/principal/principal.jsp";
 					}
 
 					RequestDispatcher redirecionar = request.getRequestDispatcher(url);
@@ -95,7 +95,7 @@ public class ServletLogin extends HttpServlet {
 			}
 
 		} else {
-
+			
 			RequestDispatcher redirecionar = request.getRequestDispatcher("/index.jsp");
 			request.setAttribute("msg", "Informe o login e senha novamente!");
 			redirecionar.forward(request, response);
