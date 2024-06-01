@@ -26,7 +26,8 @@ public ModelLogin(long id, String nome, String email, String login, String senha
 	this.login = login;
 	this.senha = senha;
 }
-public ModelLogin( String nome, String email, String login, String senha) {
+public ModelLogin(String nome, String email, String login, String senha) {
+
 	this.nome = nome;
 	this.email = email;
 	this.login = login;

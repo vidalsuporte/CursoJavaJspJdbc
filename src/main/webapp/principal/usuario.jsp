@@ -33,46 +33,46 @@
 														<h5>Cadastro de Usuários</h5>
 													</div>
 													<div class="card-block">
-														<form class="form-material">
+														<form class="form-material" action="<%=request.getContextPath()%>/ServletUsuarioController" method="post">
 															
 																<div
 																	class="form-group form-default form-static-label col-sm-2">
 																	<input type="text" name="id" id= "id" class="form-control"
-																		required="required" readonly="readonly"> <span class="form-bar"></span>
+																		readonly="readonly" value="${modolLogin.id}"> <span class="form-bar"></span>
 																	<label class="float-label">Id</label>
 																</div>
 																<div
 																	class="form-group form-default form-static-label col-sm-9">
 																	<input type="text" name="nome" id = "nome" class="form-control"
-																		required="required"> <span class="form-bar"></span>
+																		required="required" value="${modolLogin.nome}"> <span class="form-bar"></span>
 																	<label class="float-label">Nome</label>
 																</div>
 																<div
 																	class="form-group form-default form-static-label col-sm-9">
 																	<input type="text" name="login" id = "login" class="form-control"
-																		required="required" autocomplete="off"> <span class="form-bar"></span>
+																		required="required" autocomplete="off" value="${modolLogin.login}"> <span class="form-bar"></span>
 																	<label class="float-label">login</label>
 																</div>
 																<div
 																	class="form-group form-default form-static-label col-sm-9">
 																	<input type="password" name="senha" id= "senha" class="form-control"
-																		required="required" autocomplete="off"> <span class="form-bar"></span>
+																		required="required" autocomplete="off" value="${modolLogin.senha}"> <span class="form-bar"></span>
 																	<label class="float-label">Senha</label>
 																</div>
 																<div
 																	class="form-group form-default form-static-label col-sm-9">
 																	<input type="email" name="email" id="email"
 																		class="form-control" placeholder="seunome@gmail.com"
-																		required=""> <span class="form-bar"></span> <label
+																		required="required" value="${modolLogin.email}"> <span class="form-bar"></span> <label
 																		class="float-label">Email</label>
 																</div>
 
 															<button
-																class="btn btn-primary btn-round waves-effect waves-light">Salvar</button>
+																class="btn btn-primary btn-round waves-effect waves-light">Novo</button>
 															<button
-																class="btn btn-success btn-round waves-effect waves-light">Alterar</button>
+																class="btn btn-success btn-round waves-effect waves-light">Salvar</button>
 															<button
-																class="btn btn-info btn-round waves-effect waves-light">Exclurir</button>
+																class="btn btn-info btn-round waves-effect waves-light">Excluir</button>
 															<button
 																class="btn btn-warning btn-round waves-effect waves-light">Consultar</button>
 															
